@@ -23,16 +23,16 @@ mongoose.connection.openUri(mongodb_connection_string, (err, res) => {
 });
 
 //Inicializar Variable
-var app = express();
+var server = express();
 // body parser
-app.use(bodyParse.urlencoded({ extended: false }));
-app.use(bodyParse.json());
+server.use(bodyParse.urlencoded({ extended: false }));
+server.use(bodyParse.json());
 
 
 //rutas
-app.use('/usuario', usuarioRoutes);
-app.use('/login', loginRoutes);
-app.use('/', appRoutes);
+server.use('/usuario', usuarioRoutes);
+server.use('/login', loginRoutes);
+server.use('/', appRoutes);
 
 //Escuchar peticion
 //app.listen(3000, () => {
@@ -43,6 +43,6 @@ app.use('/', appRoutes);
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1'
 
-app.listen(server_port, server_ip_address, function() {
+server.listen(server_port, server_ip_address, function() {
     console.log("Listening on " + server_ip_address + ", port " + server_port)
 });

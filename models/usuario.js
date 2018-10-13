@@ -16,5 +16,6 @@ var usuarioSchema = new Schema({
 
 });
 
+if (mongoose.models && mongoose.models.usuario) return mongoose.models.usuario;
 usuarioSchema.plugin(uniqueValidator, { message: 'El {path} debe ser unico' });
 module.exports = mongoose.model('usuario', usuarioSchema);

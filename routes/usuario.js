@@ -7,8 +7,8 @@ var app = express();
 
 
 
-var Usuario = require('../models/Usuario');
-//Rustas
+var Usuario = require('../models/usuario');
+//Rustas0
 
 //Obtener lista de usuarios
 app.get('/', (req, res, next) => {

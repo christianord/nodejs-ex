@@ -10,7 +10,7 @@ app.get('/', function(req, res) {
         if (err) {
             return res.status(500).json({
                 ok: false,
-                mensaje: 'Error cargando usuario',
+                mensaje: 'Error consultando usuario',
                 errors: err
             });
         }

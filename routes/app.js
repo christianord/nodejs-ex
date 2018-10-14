@@ -16,7 +16,7 @@ app.get('/', function(req, res) {
     }
     res.status(200).json({
         ok: true,
-        mensaje: 'Peticion realizada correctamente'
+        mensaje: connection_string
     });
 
 });

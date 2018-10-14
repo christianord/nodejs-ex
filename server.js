@@ -14,7 +14,8 @@ var connection_string = 'localhost:27017/apiRadioDB';
 
 // if OPENSHIFT env variables are present, use the available connection info:
 if (process.env.OPENSHIFT_MONGODB_DB_HOST) {
-    connection_string =
+    connection_string = process.env.MONGODB_USER + ":" +
+        process.env.MONGODB_PASSWORD + "@" +
         process.env.OPENSHIFT_MONGODB_DB_HOST + ':' +
         process.env.OPENSHIFT_MONGODB_DB_PORT + '/' +
         process.env.MONGODB_DATABASE;
